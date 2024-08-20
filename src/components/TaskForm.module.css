@@ -1,0 +1,94 @@
+span {
+  font-size: 0.8rem;
+  font-weight: bold;
+}
+.task_form {
+  padding: 0.5em;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #fff;
+  width: 100%;
+  margin: 20px auto;
+}
+.task_input {
+  display: block;
+  width: 50%;
+  margin-bottom: 10px;
+  border: none;
+  border-bottom: 2px solid #ccc;
+  box-sizing: border-box;
+}
+
+.task_input:focus {
+  outline: none;
+  box-shadow: none;
+  border-bottom: solid 2px #0098e5;
+}
+
+.spent_hours {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.spent_hours input {
+  width: 10%;
+  margin-left: 5px;
+  border: none;
+  border-bottom: 2px solid #ccc;
+}
+.spent_hours input:focus {
+  outline: none;
+  box-shadow: none;
+  border-bottom: solid 2px #0098e5;
+}
+
+.save_button {
+  display: block;
+  background-color: #0098e5;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-left: auto;
+  padding: 0.4em;
+  margin-left: 5px;
+  transition: transform 0.3s;
+}
+
+.save_button:hover {
+  transform: scale(1.03);
+}
+.save_button:active {
+  transform: scale(0.98);
+}
+
+.cancel_button {
+  display: block;
+  background-color: #d9d9d9;
+  color: #000000;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-left: auto;
+  padding: 0.4em;
+  margin-left: 5px;
+  transition: transform 0.3s;
+}
+
+.cancel_button:hover {
+  transform: scale(1.03);
+}
+.cancel_button:active {
+  transform: scale(0.98);
+}
+
+.buttons {
+  display: flex;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
