@@ -6,13 +6,14 @@
   border-radius: 5px;
   cursor: pointer;
   margin-left: auto;
-  padding: 0.7em 0.8em;
+  padding: 0.2em 0.8em;
   margin-left: 5px;
   transition: transform 0.3s;
-  font-size: 0.5rem;
+  font-size: 1rem;
 }
 
 .button {
+  font-size: 1rem;
   display: block;
   background-color: #d9d9d9;
   color: #000000;
@@ -20,10 +21,10 @@
   border-radius: 5px;
   cursor: pointer;
   margin-left: auto;
-  padding: 0.7em 0.5em;
+  padding: 0.2em 0.5em;
   margin-left: 5px;
   transition: transform 0.3s;
-  font-size: 0.5rem;
+  white-space: Nowrap;
 }
 .button:hover {
   transform: scale(1.03);

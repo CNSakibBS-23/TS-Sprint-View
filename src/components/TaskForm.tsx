@@ -15,8 +15,8 @@ const TaskForm: React.FC<TaskFormProps> = ({ addTask, setIsFormVisible }) => {
   const handleSave = (e: SyntheticEvent) => {
     e.preventDefault();
     if (remainingHour > 0) {
-      addTask(taskName, taskId, remainingHour);
-
+      const trimmedName = taskName.trim();
+      addTask(trimmedName, taskId, remainingHour);
       setTaskName("");
       setRemainingHour(0);
     }
