@@ -25,7 +25,7 @@ const Card: React.FC<CardProps> = ({ name, id, remainingHour }) => {
     setRemainingCardHour((prev) => prev - 1);
   };
   return (
-    <div className={styles.task}>
+    <div className={styles.task} draggable>
       <div className={styles.task_info}>
         <p className={styles.task_name}>
           <strong>{truncatedName}</strong>
