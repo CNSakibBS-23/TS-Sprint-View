@@ -1,6 +1,7 @@
-import { Dispatch, SetStateAction } from "react";
+import { Dispatch, SetStateAction, useState } from "react";
 import styles from "./Card.module.css";
 import CardButton from "./CardButton";
+import React from "react";
 
 interface CardProps {
   name: string;
@@ -9,6 +10,7 @@ interface CardProps {
 }
 
 const Card: React.FC<CardProps> = ({ name, id, remainingHour }) => {
+  const [remainingCardHour, setRemainingCardHour] = useState(remainingHour);
   const truncateText = (text: string, length: number) => {
     if (text.length > length) {
       return text.substring(0, length) + "...";
@@ -16,7 +18,12 @@ const Card: React.FC<CardProps> = ({ name, id, remainingHour }) => {
     return text;
   };
   const truncatedName = truncateText(name, 22);
-  const handleRemainingHour = () => {};
+  const handleRemainingHour = () => {
+    setRemainingCardHour((prev) => prev + 1);
+  };
+  const handleSpentHour = () => {
+    setRemainingCardHour((prev) => prev - 1);
+  };
   return (
     <div className={styles.task}>
       <div className={styles.task_info}>
@@ -27,10 +34,10 @@ const Card: React.FC<CardProps> = ({ name, id, remainingHour }) => {
       </div>
       <div className={styles.task_times}>
         <p className={styles.remainingHour}>
-          Remaining Hour: <b>{remainingHour}h</b>
+          Remaining Hour: <b>{remainingCardHour}h</b>
         </p>
         <div className={styles.task_buttons}>
-          <CardButton text="+ Spent" />
+          <CardButton text="+ Spent" onClick={handleSpentHour} />
           <CardButton text="+ Remaining" onClick={handleRemainingHour} />
           <CardButton text="Add" color={true} />
         </div>
