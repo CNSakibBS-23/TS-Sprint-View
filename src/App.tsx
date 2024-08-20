@@ -1,7 +1,8 @@
 import { useEffect, useState } from "react";
 import UserData from "./components/UserData";
 import React from "react";
-
+import { DndProvider } from "react-dnd";
+import { HTML5Backend } from "react-dnd-html5-backend";
 const API = "https://jsonplaceholder.typicode.com/users";
 
 interface Address {
@@ -44,20 +45,22 @@ const App: React.FC = () => {
 
   return (
     <>
-      <table className="sprint-table">
-        <thead>
-          <tr>
-            <th>Member</th>
-            <th>Sprint Task</th>
-            <th>What I did yesterday</th>
-            <th>What I will do today</th>
-            <th>Blocker</th>
-          </tr>
-        </thead>
-        <tbody>
-          <UserData users={users} />
-        </tbody>
-      </table>
+      <DndProvider backend={HTML5Backend}>
+        <table className="sprint-table">
+          <thead>
+            <tr>
+              <th>Member</th>
+              <th>Sprint Task</th>
+              <th>What I did yesterday</th>
+              <th>What I will do today</th>
+              <th>Blocker</th>
+            </tr>
+          </thead>
+          <tbody>
+            <UserData users={users} />
+          </tbody>
+        </table>
+      </DndProvider>
     </>
   );
 };
