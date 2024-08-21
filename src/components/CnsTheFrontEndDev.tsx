@@ -2,7 +2,7 @@ import React from "react";
 import { DraggedItem } from "./KarimTheBackendDev";
 import { useDrop } from "react-dnd";
 
-function TaroneTheKarimsWifu({ children, setBoard }) {
+function CnsTheFrontEndDev({ children, setBoard }) {
   const [{ isOver }, drop] = useDrop(() => ({
     accept: "DIV",
     drop: (item: DraggedItem) => addCardToBoard(item),
@@ -22,4 +22,4 @@ function TaroneTheKarimsWifu({ children, setBoard }) {
   return <td ref={drop}>{children}</td>;
 }
 
-export default TaroneTheKarimsWifu;
+export default CnsTheFrontEndDev;

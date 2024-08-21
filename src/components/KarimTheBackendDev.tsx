@@ -2,7 +2,7 @@ import { useDrop } from "react-dnd";
 import TaskManager from "./TaskManager";
 import React, { useState } from "react";
 import DropArea from "./DropArea";
-import TaroneTheKarimsWifu from "./TaroneTheKarimsWifu";
+import CnsTheFrontEndDev from "./CnsTheFrontEndDev";
 export interface DraggedItem {
   id: string;
   name: string;
@@ -25,15 +25,15 @@ function KarimTheBackendDev({ index, name }) {
       <td>
         <TaskManager />
       </td>
-      <TaroneTheKarimsWifu setBoard={setBoard}>
+      <CnsTheFrontEndDev setBoard={setBoard}>
         <DropArea board={board} />
-      </TaroneTheKarimsWifu>
-      <TaroneTheKarimsWifu setBoard={setBoard2}>
+      </CnsTheFrontEndDev>
+      <CnsTheFrontEndDev setBoard={setBoard2}>
         <DropArea board={board2} />
-      </TaroneTheKarimsWifu>
-      <TaroneTheKarimsWifu setBoard={setBoard3}>
+      </CnsTheFrontEndDev>
+      <CnsTheFrontEndDev setBoard={setBoard3}>
         <DropArea board={board3} />
-      </TaroneTheKarimsWifu>
+      </CnsTheFrontEndDev>
     </tr>
   );
 }
