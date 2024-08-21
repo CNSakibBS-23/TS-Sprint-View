@@ -14,6 +14,7 @@ const Card: React.FC<CardProps> = ({ name, id, remainingHour }) => {
   const [remainingCardHour, setRemainingCardHour] = useState(remainingHour);
   const [{ isDragging }, drag] = useDrag(() => ({
     type: "DIV",
+    item: { id: id, name: name, remainingHour: remainingCardHour },
     collect: (monitor) => ({
       isDragging: !!monitor.isDragging(),
     }),

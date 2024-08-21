@@ -1,6 +1,9 @@
-import React from "react";
+import React, { useState } from "react";
 import TaskManager from "./TaskManager";
 import "./UserData.modules.css";
+
+import DropArea from "./DropArea";
+import KarimTheBackendDev from "./KarimTheBackendDev";
 
 interface Address {
   street: string;
@@ -22,6 +25,11 @@ interface User {
 interface UserDataProps {
   users: User[];
 }
+interface DraggedItem {
+  id: string;
+  name: string;
+  remainingHour: number;
+}
 
 const UserData: React.FC<UserDataProps> = ({ users }) => {
   return (
@@ -30,22 +38,7 @@ const UserData: React.FC<UserDataProps> = ({ users }) => {
         const { id, name } = curUser;
         const { bs } = curUser.company;
 
-        return (
-          <tr key={id}>
-            <td id="name_formatting">
-              <div className="name_style">
-                <h4>{name}</h4>
-                <p>Total Remaining Time: 57h</p>
-              </div>
-            </td>
-            <td>
-              <TaskManager />
-            </td>
-            <td></td>
-            <td></td>
-            <td></td>
-          </tr>
-        );
+        return <KarimTheBackendDev key={id} name={name} index={id} />;
       })}
     </>
   );
