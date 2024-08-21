@@ -41,9 +41,15 @@ const UserData: React.FC<UserDataProps> = ({ users }) => {
             <td>
               <TaskManager />
             </td>
-            <td></td>
-            <td></td>
-            <td></td>
+            <td>
+              <TaskManager />
+            </td>
+            <td>
+              <TaskManager />
+            </td>
+            <td>
+              <TaskManager />
+            </td>
           </tr>
         );
       })}

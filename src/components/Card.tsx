@@ -1,6 +1,7 @@
 import { useState } from "react";
 import styles from "./Card.module.css";
 import CardButton from "./CardButton";
+import bookmarkIcon from "../assets/Bookmark border.svg";
 import React from "react";
 
 interface CardProps {
@@ -25,12 +26,15 @@ const Card: React.FC<CardProps> = ({ name, id, remainingHour }) => {
     setRemainingCardHour((prev) => prev - 1);
   };
   return (
-    <div className={styles.task}>
+    <div className={styles.task} draggable>
       <div className={styles.task_info}>
         <p className={styles.task_name}>
           <strong>{truncatedName}</strong>
         </p>
-        <p className="task-id">{id}</p>
+        <div className={styles.task_id}>
+          <img src={bookmarkIcon} alt="bookmark-icon" />
+          <p>{id}</p>
+        </div>
       </div>
       <div className={styles.task_times}>
         <p className={styles.remainingHour}>
