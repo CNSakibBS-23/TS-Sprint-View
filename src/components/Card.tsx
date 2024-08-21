@@ -1,6 +1,7 @@
 import { useState } from "react";
 import styles from "./Card.module.css";
 import CardButton from "./CardButton";
+import bookmarkIcon from "../assets/Bookmark border.svg";
 import React from "react";
 import { useDrag } from "react-dnd";
 
@@ -38,7 +39,10 @@ const Card: React.FC<CardProps> = ({ name, id, remainingHour }) => {
         <p className={styles.task_name}>
           <strong>{truncatedName}</strong>
         </p>
-        <p className="task-id">{id}</p>
+        <div className={styles.task_id}>
+          <img src={bookmarkIcon} alt="bookmark-icon" />
+          <p>{id}</p>
+        </div>
       </div>
       <div className={styles.task_times}>
         <p className={styles.remainingHour}>
