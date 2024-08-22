@@ -27,6 +27,7 @@ function KarimTheBackendDev({ index, name }) {
       </td>
       <CnsTheFrontEndDev setBoard={setBoard}>
         <DropArea board={board} />
+        <TaskManager />
       </CnsTheFrontEndDev>
       <CnsTheFrontEndDev setBoard={setBoard2}>
         <DropArea board={board2} />

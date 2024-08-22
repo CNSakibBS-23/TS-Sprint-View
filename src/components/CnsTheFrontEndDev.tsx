@@ -7,7 +7,7 @@ function CnsTheFrontEndDev({ children, setBoard }) {
     accept: "DIV",
     drop: (item: DraggedItem) => addCardToBoard(item),
     collect: (monitor) => {
-      console.log(monitor);
+      // console.log(monitor);
       return {
         isOver: !!monitor.isOver(),
       };
@@ -15,7 +15,7 @@ function CnsTheFrontEndDev({ children, setBoard }) {
   }));
 
   const addCardToBoard = (draggedItem: DraggedItem) => {
-    console.log(draggedItem);
+    // console.log(draggedItem);
     setBoard((prevBoard) => [...prevBoard, draggedItem]);
   };
 

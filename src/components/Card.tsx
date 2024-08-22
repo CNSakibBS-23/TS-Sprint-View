@@ -1,7 +1,7 @@
 import { useState } from "react";
 import styles from "./Card.module.css";
 import CardButton from "./CardButton";
-import bookmarkIcon from "../assets/Bookmark border.svg";
+import bookmarkIcon from "../assets/Bookmark_border.svg";
 import React from "react";
 import { useDrag } from "react-dnd";
 

@@ -1,16 +1,19 @@
-import React, { Dispatch, SetStateAction, useState } from "react";
-import { useDrop } from "react-dnd";
+import React from "react";
 import Card from "./Card";
 import { DraggedItem } from "./KarimTheBackendDev";
 
 interface DropAreaProps {
-  setBoard: Dispatch<SetStateAction<DraggedItem[]>>;
-  index: number;
+  board: DraggedItem[];
 }
+
 const DropArea: React.FC<DropAreaProps> = ({ board }) => {
+  const uniqueBoard = board.filter(
+    (task, index, self) => index === self.findIndex((t) => t.id === task.id)
+  );
+
   return (
     <div>
-      {board.map((task) => (
+      {uniqueBoard.map((task) => (
         <Card
           key={task.id}
           name={task.name}
