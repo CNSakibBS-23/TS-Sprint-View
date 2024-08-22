@@ -9,7 +9,7 @@ interface TaskFormProps {
 
 const TaskForm: React.FC<TaskFormProps> = ({ addTask, setIsFormVisible }) => {
   const [taskName, setTaskName] = useState<string>("");
-  const [taskId, setTaskId] = useState<string>("TS - 23");
+  const [taskId, setTaskId] = useState<string>(crypto.randomUUID());
   const [remainingHour, setRemainingHour] = useState<number>(0);
 
   const handleSave = (e: SyntheticEvent) => {

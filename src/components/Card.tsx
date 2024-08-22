@@ -1,8 +1,9 @@
 import { useState } from "react";
 import styles from "./Card.module.css";
 import CardButton from "./CardButton";
-import bookmarkIcon from "../assets/Bookmark border.svg";
+import bookmarkIcon from "../assets/Bookmark_border.svg";
 import React from "react";
+import { useDrag } from "react-dnd";
 
 interface CardProps {
   name: string;
@@ -12,6 +13,13 @@ interface CardProps {
 
 const Card: React.FC<CardProps> = ({ name, id, remainingHour }) => {
   const [remainingCardHour, setRemainingCardHour] = useState(remainingHour);
+  const [{ isDragging }, drag] = useDrag(() => ({
+    type: "DIV",
+    item: { id: id, name: name, remainingHour: remainingCardHour },
+    collect: (monitor) => ({
+      isDragging: !!monitor.isDragging(),
+    }),
+  }));
   const truncateText = (text: string, length: number) => {
     if (text.length > length) {
       return text.substring(0, length) + "...";
@@ -26,7 +34,7 @@ const Card: React.FC<CardProps> = ({ name, id, remainingHour }) => {
     setRemainingCardHour((prev) => prev - 1);
   };
   return (
-    <div className={styles.task} draggable>
+    <div className={styles.task} ref={drag}>
       <div className={styles.task_info}>
         <p className={styles.task_name}>
           <strong>{truncatedName}</strong>
