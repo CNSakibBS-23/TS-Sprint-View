@@ -3,24 +3,12 @@ import UserData from "./components/UserData";
 import React from "react";
 import { DndProvider } from "react-dnd";
 import { HTML5Backend } from "react-dnd-html5-backend";
+import "./App.css";
 const API = "https://jsonplaceholder.typicode.com/users";
-
-interface Address {
-  street: string;
-  city: string;
-  zipcode: string;
-}
-
-interface Company {
-  bs: string;
-}
 
 interface User {
   id: number;
   name: string;
-  email: string;
-  address: Address;
-  company: Company;
 }
 
 const App: React.FC = () => {
@@ -33,10 +21,7 @@ const App: React.FC = () => {
       if (data.length > 0) {
         setUsers(data);
       }
-      console.log(data);
-    } catch (e) {
-      console.error(e);
-    }
+    } catch (e) {}
   };
 
   useEffect(() => {

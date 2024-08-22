@@ -15,8 +15,8 @@ function CnsTheFrontEndDev({ children, setBoard }) {
   }));
 
   const addCardToBoard = (draggedItem: DraggedItem) => {
-    // console.log(draggedItem);
-    setBoard((prevBoard) => [...prevBoard, draggedItem]);
+    console.log(draggedItem);
+    setBoard((prevBoard: any) => [...prevBoard, draggedItem]);
   };
 
   return <td ref={drop}>{children}</td>;

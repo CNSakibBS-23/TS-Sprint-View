@@ -5,8 +5,6 @@ import KarimTheBackendDev from "./KarimTheBackendDev";
 interface User {
   id: number;
   name: string;
-  email: string;
-  companyBs: string;
 }
 
 interface UserDataProps {
