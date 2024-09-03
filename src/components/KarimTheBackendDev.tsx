@@ -14,6 +14,8 @@ function KarimTheBackendDev({ index, name }) {
   const [board2, setBoard2] = useState<DraggedItem[]>([]);
   const [board3, setBoard3] = useState<DraggedItem[]>([]);
 
+  console.log(board, board2, board3);
+
   return (
     <tr>
       <td id="name_formatting">
