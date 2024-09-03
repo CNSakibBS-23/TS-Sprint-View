@@ -1,6 +1,6 @@
 import React from "react";
 import "./UserData.modules.css";
-import KarimTheBackendDev from "./KarimTheBackendDev";
+import TableData from "./TableData";
 
 interface User {
   id: number;
@@ -15,7 +15,7 @@ const UserData: React.FC<UserDataProps> = ({ users }) => {
   return (
     <>
       {users.map((user) => (
-        <KarimTheBackendDev key={user.id} name={user.name} index={user.id} />
+        <TableData key={user.id} name={user.name} index={user.id} />
       ))}
     </>
   );

@@ -1,28 +1,25 @@
 import React from "react";
-import Card from "./Card";
-import { DraggedItem } from "./KarimTheBackendDev";
+import { DraggedItem } from "./TableData";
+import { useDrop } from "react-dnd";
 
-interface DropAreaProps {
-  board: DraggedItem[];
+function DropArea({ children, setBoard }) {
+  const [{ isOver }, drop] = useDrop(() => ({
+    accept: "DIV",
+    drop: (item: DraggedItem) => addCardToBoard(item),
+    collect: (monitor) => {
+      // console.log(monitor);
+      return {
+        isOver: !!monitor.isOver(),
+      };
+    },
+  }));
+
+  const addCardToBoard = (draggedItem: DraggedItem) => {
+    console.log(draggedItem);
+    setBoard((prevBoard: any) => [...prevBoard, draggedItem]);
+  };
+
+  return <td ref={drop}>{children}</td>;
 }
-
-const DropArea: React.FC<DropAreaProps> = ({ board }) => {
-  const uniqueBoard = board.filter(
-    (task, index, self) => index === self.findIndex((t) => t.id === task.id)
-  );
-
-  return (
-    <div>
-      {uniqueBoard.map((task) => (
-        <Card
-          key={task.id}
-          name={task.name}
-          id={task.id}
-          remainingHour={task.remainingHour}
-        />
-      ))}
-    </div>
-  );
-};
 
 export default DropArea;
